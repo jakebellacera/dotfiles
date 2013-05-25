@@ -1,0 +1,49 @@
+# Global gitignore
+# ================
+# 
+# These rules will apply to Git globally, as they are app/os
+# specific.
+# 
+# run this to load it:
+#   git config --global core.excludesfile ~/.global_ignore
+#
+#
+##############################################################
+# Mac stuff
+##############################################################
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+###############################################################
+# vim stuff
+###############################################################
+
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+###############################################################
+# SASS stuff
+###############################################################
+
+*.sass-cache
+
+###############################################################
+# SVN stuff
+###############################################################
+
+.svn/
+
