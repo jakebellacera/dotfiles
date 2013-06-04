@@ -16,3 +16,6 @@
 [submodule "home/.vim/bundle/rails.vim"]
 	path = home/.vim/bundle/rails.vim
 	url = https://github.com/tpope/vim-rails.git
+[submodule "home/.vim/bundle/zencoding"]
+	path = home/.vim/bundle/zencoding
+	url = https://github.com/mattn/zencoding-vim.git
