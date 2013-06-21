@@ -19,8 +19,10 @@ let g:ctrl_p_custom_ignore = {
   \ }
 
 " Map NERDTree toggle key
-map <F2> <plug>NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_gui_startup = 0
+silent! map <F3> :NERDTreeFind<CR>
+silent! map <F2> :NERDTreeToggle<CR>
+let g:NERDTreeMapActivateNode="<F3>"
+let g:NERDTreeMapPreview="<F4>"
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['\.git$', '\.svn$', '\.hg$', '\.sass-cache$', '\.swp$', '\.DS_Store']
 
