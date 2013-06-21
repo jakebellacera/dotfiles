@@ -26,6 +26,9 @@ let g:NERDTreeMapPreview="<F4>"
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['\.git$', '\.svn$', '\.hg$', '\.sass-cache$', '\.swp$', '\.DS_Store']
 
+" closetag.vim
+let g:closetag_html_style=1
+
 " Show line numbers
 set number
 

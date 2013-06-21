@@ -19,3 +19,6 @@
 [submodule "home/.vim/bundle/zencoding"]
 	path = home/.vim/bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
+[submodule "home/.vim/bundle/closetag.vim"]
+	path = home/.vim/bundle/closetag.vim
+	url = https://github.com/vim-scripts/closetag.vim.git
