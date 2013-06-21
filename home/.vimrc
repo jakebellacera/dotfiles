@@ -5,6 +5,9 @@
 " Set the shell to ZSH
 set shell=zsh
 
+" Ignore specific directories
+set wildignore +=*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*.DS_Store,*.swp
+
 " Use Pathogen for plugin management
 execute pathogen#infect()
 
@@ -14,9 +17,6 @@ set guitablabel=%t
 " CtrlP config
 let g:ctrl_p_show_hidden = 1
 let g:ctrlp_dotfiles = 1
-let g:ctrl_p_custom_ignore = {
-  \ 'dir': '\.git$|\.hg$|\.svn$|\.sass-cache|\.swp|\.DS_Store',
-  \ }
 
 " Map NERDTree toggle key
 silent! map <F3> :NERDTreeFind<CR>
