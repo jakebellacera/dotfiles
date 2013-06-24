@@ -2,6 +2,9 @@
 ## BASE
 ################################################################################
 
+# Set the shell output
+export PS1="\e[1;36m\W \e[1;31m$\e[m "
+
 # Set the editor to vim. See .vimrc for vim config
 export EDITOR=vim
 export VISUAL=vim
