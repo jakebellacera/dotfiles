@@ -10,7 +10,7 @@ export EDITOR=vim
 export VISUAL=vim
 
 # Set the prompt
-export PS1="\[\e[1;36m\]\W \[\e[1;31m\]\$\[\e[0m\] "
+source $HOME/.bash_gitprompt
 
 ################################################################################
 ## Load System-specific config
