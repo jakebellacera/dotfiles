@@ -5,7 +5,7 @@
 # specific.
 # 
 # run this to load it:
-#   git config --global core.excludesfile ~/.global_ignore
+#   git config --global core.excludesfile ~/.gitignore_global
 #
 #
 ##############################################################
