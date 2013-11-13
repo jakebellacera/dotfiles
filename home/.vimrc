@@ -15,8 +15,13 @@ execute pathogen#infect()
 set guitablabel=%t
 
 " CtrlP config
-let g:ctrl_p_show_hidden = 1
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_dotfiles = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn|sass_cache)|node_modules)$',
+  \ 'file': '\v\.(DS_Store|exe|so|swp)$',
+  \ }
 
 " Map NERDTree toggle key
 silent! map <F3> :NERDTreeFind<CR>
@@ -24,7 +29,7 @@ silent! map <F2> :NERDTreeToggle<CR>
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 let NERDTreeShowHidden = 1
-let NERDTreeIgnore = ['\.git$', '\.svn$', '\.hg$', '\.sass-cache$', '\.swp$', '\.DS_Store']
+let NERDTreeIgnore = ['\.git$', '\.svn$', '\.hg$', '\.sass-cache$', '\.swp$', '\.DS_Store', 'node_modules']
 
 " closetag.vim
 let g:closetag_html_style=1
