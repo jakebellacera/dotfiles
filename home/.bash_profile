@@ -6,6 +6,9 @@
 export EDITOR=vim
 export VISUAL=vim
 
+# Set bash's input mode to Vi
+set -o vi
+
 # Set the prompt
 source $HOME/.bash_gitprompt
 
