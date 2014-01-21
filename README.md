@@ -46,12 +46,6 @@ Then, tell git to use the included global gitignore:
 
     git config --global core.excludesfile ~/.gitignore_global
 
-Finally, add a file named `.local_conf` to your home folder (not in the dotfiles
-folder) and add these environment variables (in the format `export VARIABLE_NAME=foo`)
-to it:
-
-* `POWERLINE_DIR` - the directory for [Powerline][powerline]. This is used in tmux.
-
 That's it, you're done! :beer:
 
 ## Local configuration
