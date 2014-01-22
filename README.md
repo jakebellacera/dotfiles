@@ -1,6 +1,6 @@
 # jakebellacera's dotfiles
 
-These are my dotfiles. Feel free to use anything you'd like! Just be forwarned,
+These are my dotfiles. Feel free to use anything you'd like! Just be warned,
 I spend a majority of my development time in the terminal, so my dotfiles are
 heavily focused around my specific workflow.
 
@@ -46,15 +46,16 @@ Then, tell git to use the included global gitignore:
 
     git config --global core.excludesfile ~/.gitignore_global
 
-That's it, you're done! :beer:
+Finally, open up vim and type in `:BundleInstall` to install the bundles.
 
 ## Local configuration
 
 The `.bash_profile` will automatically look for `~/.local_conf`. If it exists,
 then it will load it into the bash configuration. This allows you to extend the
 existing bash configuration set from the dotfiles. Do note that the local conf
-is loaded _after_ the dotfiles'.
+is loaded _after_ the dotfiles.
 
+[powerline]: https://github.com/Lokaltog/powerline
 [homesick]: https://github.com/technicalpickles/homesick
 [xcode]: http://itunes.apple.com/us/app/xcode/id497799835
 [xcode-cli]: https://developer.apple.com/downloads
