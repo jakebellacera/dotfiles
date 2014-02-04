@@ -17,6 +17,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jelera/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
@@ -37,6 +38,7 @@ set autoindent                    " set auto indent
 set ts=2                          " set indent to 2 spaces
 set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
+set autoindent                    " auto-indent new lines
 set nocompatible                  " don't need to be compatible with old vim
 set number                        " show line numbers
 set showmatch                     " show bracket matches
@@ -100,6 +102,13 @@ let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
+    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
 
 " unmap F1 help
 nmap <F1> :echo<CR>
