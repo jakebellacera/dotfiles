@@ -1,1 +1,6 @@
 home/.vim/vundles
+
+# Only track certain files in home/.config because some apps may use
+# this folder.
+home/.config/*
+!home/.config/powerline
