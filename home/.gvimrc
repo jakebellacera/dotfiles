@@ -1,4 +1,4 @@
-set guifont=Consolas:h14
+set guifont=Monaco:h14
 
 " Disable error bells
 set noerrorbells
