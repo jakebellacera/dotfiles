@@ -46,7 +46,9 @@ Then, tell git to use the included global gitignore:
 
     git config --global core.excludesfile ~/.gitignore_global
 
-Finally, open up vim and type in `:BundleInstall` to install the bundles.
+Finally, run the following command to install all Vim bundles:
+
+    vim +PluginInstall +qall
 
 ## Local configuration
 
