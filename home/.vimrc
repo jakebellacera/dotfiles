@@ -3,37 +3,42 @@
 " =============================================================================
 
 " load vundle and set load path to .vim/vundles
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc("$HOME/.vim/vundles")
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin('~/.vim/vundles')
 
 " add some bundles via github
-Bundle 'chriskempson/base16-vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'jelera/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-liquid'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'kana/vim-textobj-user'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'mattn/webapi-vim'
-Bundle 'chrishunt/xterm-color-table.vim'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-liquid'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'mattn/webapi-vim'
+Plugin 'chrishunt/xterm-color-table.vim'
+
+" ending vundle config
+call vundle#end()
+filetype plugin indent on
 
 " =============================================================================
 " CONFIG
 " =============================================================================
 syntax on                         " enable syntax highlighting
-filetype plugin indent on
 set autoindent                    " set auto indent
 set ts=2                          " set indent to 2 spaces
 set shiftwidth=2
