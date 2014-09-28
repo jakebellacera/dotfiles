@@ -73,8 +73,7 @@ runtime macros/matchit.vim        " use '%' to jump between start/end of methods
 set wildignore +=*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*.DS_Store,*.swp
 
 " set dark background and color scheme
-set background=dark
-colorscheme base16-railscasts
+colorscheme railscasts
 
 " set up some custom colors
 highlight clear SignColumn
@@ -179,4 +178,3 @@ function! RenameFile()
   endif
 endfunction
 map <leader>n :call RenameFile()<cr>
-
