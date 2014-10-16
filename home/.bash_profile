@@ -10,7 +10,9 @@ export VISUAL=vim
 set -o vi
 
 # Set the prompt
-source $HOME/.bash_gitprompt
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 
 ################################################################################
 ## Load System-specific config
