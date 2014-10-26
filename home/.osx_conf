@@ -1,1 +1,13 @@
 # OSX-specific stuff goes here 
+
+dw () {
+  cd ~/Development/Work
+}
+
+dp () {
+  cd ~/Development/Personal
+}
+
+df () {
+  cd ~/Development/Freelance
+}
