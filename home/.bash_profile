@@ -14,6 +14,11 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
+# Add git completion
+if [ -f $HOME/.bash/.git-completion.bash ]; then
+  . $HOME/.bash/.git-completion.bash
+fi
+
 ################################################################################
 ## Load System-specific config
 ################################################################################
