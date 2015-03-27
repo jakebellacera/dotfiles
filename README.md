@@ -34,6 +34,7 @@ Before you do anything, make sure you have these prerequisites installed:
 * [Powerline][powerline]
 * The following homebrew packages:
     * `brew install rbenv ruby-build nvm tmux reattach-to-user-namespace`
+    * Optional, but recommended: `brew install vim git`
 
 First, install homesick to sync this repo with your home folder:
 
