@@ -31,9 +31,9 @@ Before you do anything, make sure you have these prerequisites installed:
 * Git
 * Ruby (version `>= 1.9` is preferred, though `1.8` is fine).
 * Python (version `2.7` or `3.3`)
-* tmux
-    * OSX users, you will also need to run `brew install reattach-to-user-namespace`.
 * [Powerline][powerline]
+* The following homebrew packages:
+    * `brew install rbenv ruby-build nvm tmux reattach-to-user-namespace`
 
 First, install homesick to sync this repo with your home folder:
 
@@ -45,9 +45,19 @@ Then, tell git to use the included global gitignore:
 
     git config --global core.excludesfile ~/.gitignore_global
 
-Finally, run the following command to install all Vim bundles:
+Afterwards, run the following command to install all Vim bundles:
 
     vim +PluginInstall +qall
+
+Then, install node.js with nvm:
+
+    nvm install v0.10
+    nvm alias default v0.10
+
+Then, install ruby with rbenv:
+
+    rbenv install 2.2
+    rbenv global 2.2
 
 ## Local configuration
 

@@ -18,6 +18,12 @@ fi
 # Load general helper functions
 source $HOME/.bash/.general-helpers.bash
 
+# Load NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Load rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Load hidden, local config -- if it exists
 [[ -f $HOME/.local_conf ]] && source $HOME/.local_conf
