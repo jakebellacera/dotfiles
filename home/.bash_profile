@@ -22,6 +22,8 @@ fi
 ################################################################################
 ## Load System-specific config
 ################################################################################
+# Load general helper functions
+source $HOME/.bash/.general-helpers.bash
 
 if [[ "$(uname -s)" == Darwin ]]; then
   source $HOME/.osx_conf
