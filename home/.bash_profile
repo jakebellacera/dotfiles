@@ -1,7 +1,3 @@
-################################################################################
-## BASE
-################################################################################
-
 # Set the editor to vim. See .vimrc for vim config
 export EDITOR=vim
 export VISUAL=vim
@@ -19,18 +15,9 @@ if [ -f $HOME/.bash/.git-completion.bash ]; then
   . $HOME/.bash/.git-completion.bash
 fi
 
-################################################################################
-## Load System-specific config
-################################################################################
 # Load general helper functions
 source $HOME/.bash/.general-helpers.bash
 
-if [[ "$(uname -s)" == Darwin ]]; then
-  source $HOME/.osx_conf
-else
-  source $HOME/.linux_conf
-fi
 
 # Load hidden, local config -- if it exists
 [[ -f $HOME/.local_conf ]] && source $HOME/.local_conf
-

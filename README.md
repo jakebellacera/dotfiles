@@ -7,6 +7,7 @@ heavily focused around my specific workflow.
 These dotfiles will work great for you if you meet all of the below requirements:
 
 * You type in dvorak.
+* You use OSX.
 * You use the terminal primarily for development.
 * You use vim for editing text files.
 * You use git for version control.
@@ -17,8 +18,6 @@ These dotfiles will work great for you if you meet all of the below requirements
 * tmux configuration
 * [Powerline][powerline] configuration
 * bash configuration
-    * separate configs for OSX and Linux machines
-    * optional support for a machine-specific configuration (looks for `~/.local_conf`).
 * global gitignore
 
 ## Installation
