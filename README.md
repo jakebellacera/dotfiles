@@ -33,7 +33,7 @@ Before you do anything, make sure you have these prerequisites installed:
 * Python (version `2.7` or `3.3`)
 * [Powerline][powerline]
 * The following homebrew packages:
-    * `brew install rbenv ruby-build nvm tmux reattach-to-user-namespace`
+    * `brew install rbenv ruby-build nvm tmux reattach-to-user-namespace bash-git-prompt`
     * Optional, but recommended: `brew install vim git`
 
 First, install homesick to sync this repo with your home folder:
