@@ -60,6 +60,12 @@ Then, install ruby with rbenv:
     rbenv install 2.2
     rbenv global 2.2
 
+Once everything else is installed, then run the following command in this folder:
+
+    bash scripts/init
+
+This will configure OSX to look and run the way I like it.
+
 ## Local configuration
 
 The `.bash_profile` will automatically look for `~/.local_conf`. If it exists,
