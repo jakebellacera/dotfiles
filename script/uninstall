@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm ~/.profile
+rm ~/.bash_profile
 rm ~/.inputrc
 rm ~/.gitconfig
 rm ~/.vim
