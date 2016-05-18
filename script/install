@@ -12,7 +12,9 @@ fi
 
 brew bundle
 
-git submodule foreach git pull origin master
+# checkout git submodules
+git submodule init
+git submodule update
 
 # bash
 ln -nfs "$(pwd)/bash/profile.sh" ~/.bash_profile
@@ -22,5 +24,7 @@ ln -nfs "$(pwd)/bash/inputrc.sh" ~/.inputrc
 ln -nfs "$(pwd)/git/gitconfig" ~/.gitconfig
 
 # vim
+ln -nfs "$(pwd)/vim/.vim" ~/.vim
 ln -nfs "$(pwd)/vim/vimrc" ~/.vimrc
 ln -nfs "$(pwd)/vim/gvimrc" ~/.gvimrc
+vim +PluginInstall +qall

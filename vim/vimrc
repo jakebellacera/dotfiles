@@ -6,7 +6,7 @@ set nocompatible
 
 " load vundle and set load path to .vim/vundles
 filetype off
-set rtp+=$DOTFILES_FOLDER/vim/vundles
+set rtp+=~/.vim/bundle/vundle
 call vundle#begin('~/.vim/vundles')
 
 " add some bundles via github

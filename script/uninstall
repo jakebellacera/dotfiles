@@ -3,5 +3,6 @@
 rm ~/.profile
 rm ~/.inputrc
 rm ~/.gitconfig
+rm ~/.vim
 rm ~/.vimrc
 rm ~/.gvimrc
