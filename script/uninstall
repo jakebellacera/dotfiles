@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rm ~/.profile
+rm ~/.inputrc
+rm ~/.gitconfig
+rm ~/.vimrc
+rm ~/.gvimrc

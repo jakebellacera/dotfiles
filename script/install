@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+set -x
+
+cd $(dirname "$0")/..
+
+# install homebrew if it does not exist
+if [ ! -x /usr/local/bin/brew ]; then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+brew bundle
+
+git submodule foreach git pull origin master
+
+# bash
+ln -nfs "$(pwd)/bash/profile.sh" ~/.bash_profile
+ln -nfs "$(pwd)/bash/inputrc.sh" ~/.inputrc
+
+# git
+ln -nfs "$(pwd)/git/gitconfig" ~/.gitconfig
+
+# vim
+ln -nfs "$(pwd)/vim/vimrc" ~/.vimrc
+ln -nfs "$(pwd)/vim/gvimrc" ~/.gvimrc

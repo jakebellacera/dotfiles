@@ -1,13 +1,6 @@
 # Global gitignore
 # ================
-# 
-# These rules will apply to Git globally, as they are app/os
-# specific.
-# 
-# run this to load it:
-#   git config --global core.excludesfile ~/.gitignore_global
-#
-#
+
 ##############################################################
 # Mac stuff
 ##############################################################
@@ -46,4 +39,3 @@ Session.vim
 ###############################################################
 
 .svn/
-
