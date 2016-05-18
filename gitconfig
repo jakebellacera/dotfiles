@@ -1,0 +1,9 @@
+[github]
+  user = jakebellacera
+
+[push]
+  default = simple
+
+[user]
+  name = Jake Bellacera
+  email = hi@jakebellacera.com
