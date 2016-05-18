@@ -2,6 +2,13 @@
 
 These are my dotfiles.
 
+## What's included
+
+* My custom configuration of various settings in OS X.
+* My custom bash configuration.
+* The latest version of vim, set to the default `EDITOR`, with my custom configuration, bundles, etc.
+* The latest version of git, with my credentials and global `.gitignore` set.
+
 ## Installation
 
 1. Clone this repo to `~/.dotfiles`.
