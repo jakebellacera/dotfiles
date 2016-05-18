@@ -11,12 +11,12 @@ fi
 set -o vi
 
 # Set the prompt
-if [ ! -x /usr/local/bin/brew ]; then
+if [ -x /usr/local/bin/brew ]; then
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 # Add git completion
-if [ -f $DOTFILES_FOLDER/bash/git-completion.bash ]; then
+if [ -f $DOTFILES_FOLDER/bash/git-completion.sh ]; then
   . $DOTFILES_FOLDER/bash/git-completion.sh
 fi
 
