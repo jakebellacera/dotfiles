@@ -9,7 +9,7 @@
   email = hi@jakebellacera.com
 
 [core]
-  excludesfile = $DOTFILES_FOLDER/git/gitignore_global
+  excludesFile = ~/.dotfiles/git/gitignore_global
 
 [credential]
   helper = osxkeychain
