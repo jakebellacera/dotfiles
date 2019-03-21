@@ -2,6 +2,9 @@
 export EDITOR=vim
 export VISUAL=vim
 
+# Update path for homebrew
+export PATH="/usr/local/sbin:$PATH"
+
 # Set env to dotfiles folder if it does not exist
 if [ -z ${DOTFILES_FOLDER+x} ]; then
   export DOTFILES_FOLDER=$HOME/.dotfiles
