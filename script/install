@@ -21,7 +21,9 @@ ln -nfs "$(pwd)/bash/profile.sh" ~/.bash_profile
 ln -nfs "$(pwd)/bash/inputrc.sh" ~/.inputrc
 
 # git
-ln -nfs "$(pwd)/git/gitconfig" ~/.gitconfig
+echo "Configuring git..."
+ln -nfs "$(pwd)/git/gitignore_global" ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
 
 # vim
 ln -nfs "$(pwd)/vim/.vim" ~/.vim

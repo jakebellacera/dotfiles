@@ -7,7 +7,7 @@ These are my dotfiles.
 * My custom configuration of various settings in OS X.
 * My custom bash configuration.
 * The latest version of vim, set to the default `EDITOR`, with my custom configuration, bundles, etc.
-* The latest version of git, with my credentials and global `.gitignore` set.
+* The latest version of git with my `.gitignore_global` set.
 
 ## Installation
 
