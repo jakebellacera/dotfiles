@@ -4,7 +4,7 @@ These are my dotfiles.
 
 ## What's included
 
-* My custom configuration of various settings in OS X.
+* My custom configuration of various settings in macOS
 * My custom bash configuration.
 * The latest version of vim, set to the default `EDITOR`, with my custom configuration, bundles, etc.
 * The latest version of git with my `.gitignore_global` set.
@@ -14,6 +14,11 @@ These are my dotfiles.
 1. Clone this repo to `~/.dotfiles`.
 2. Run `~/.dotfiles/script/install`.
 3. Open a new terminal tab.
+
+### Install options
+
+* Use the `--skip-macos` flag to skip the macos/init.sh script
+* Use the `--skip-homebrew` flag to skip installing homebrew & dependencies
 
 ## Uninstallation
 

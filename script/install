@@ -1,22 +1,51 @@
 #!/bin/sh
 
+# set args
+while :; do
+  case $1 in
+    --skip-macos) SKIP_MACOS=true
+    ;;
+    --skip-homebrew) SKIP_HOMEBREW=true
+    ;;
+    *) break
+  esac
+  shift
+done
+
+# colored text helpers
+echo_warning () {
+  echo "$(tput setaf 3)$1$(tput sgr 0)"
+}
+echo_success () {
+  echo "$(tput setaf 2)$1$(tput sgr 0)"
+}
+
+# cd into current directory
 cd $(dirname "$0")/..
 
-# set osx config
-yes | source "$(pwd)/osx/init.sh"
-
-# install homebrew if it does not exist
-if [ ! -x /usr/local/bin/brew ]; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# set macOS config
+if [ "$SKIP_MACOS" == true ]; then
+  echo_warning "Skipping macOS config"
+else
+  yes | source "$(pwd)/macos/init.sh"
 fi
 
-brew bundle
+# install homebrew & dependencies
+if [ "$SKIP_HOMEBREW" == true ]; then
+  echo_warning "Skipping homebrew install & dependencies"
+else
+  echo "Checking to see if we need to install homebrew..."
+  if [ ! -x /usr/local/bin/brew ]; then
+    echo "Installing homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
 
-# checkout git submodules
-git submodule init
-git submodule update
+  echo "Installing homebrew dependencies..."
+  brew bundle
+fi
 
 # bash
+echo "Congfiguring bash profile..."
 ln -nfs "$(pwd)/bash/profile.sh" ~/.bash_profile
 ln -nfs "$(pwd)/bash/inputrc.sh" ~/.inputrc
 
@@ -26,7 +55,13 @@ ln -nfs "$(pwd)/git/gitignore_global" ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
 # vim
+echo "Setting up vim..."
+git submodule init
+git submodule update
 ln -nfs "$(pwd)/vim/.vim" ~/.vim
 ln -nfs "$(pwd)/vim/vimrc" ~/.vimrc
 ln -nfs "$(pwd)/vim/gvimrc" ~/.gvimrc
 vim +PluginInstall +qall
+
+echo_success "✓ Dotfiles install complete!"
+echo "You may now set up your git config now if you haven’t already."

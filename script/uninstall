@@ -1,8 +1,37 @@
 #!/bin/sh
 
-rm ~/.bash_profile
-rm ~/.inputrc
-rm ~/.gitconfig
-rm ~/.vim
-rm ~/.vimrc
-rm ~/.gvimrc
+# set args
+while :; do
+  case $1 in
+    -v) VERBOSE_MODE=true
+    ;;
+    *) break
+  esac
+  shift
+done
+
+remove_dotfiles_symlink () {
+  # check if the file exists
+  if [ ! -e $1 ]; then
+    if [ "$VERBOSE_MODE" == true ]; then
+      echo "Could not remove $1 because it doesn’t exist."
+    fi
+    return
+  fi
+
+  # check if the file is a symlink
+  if [ -L $1 ]; then
+    rm $1
+  else
+    if [ "$VERBOSE_MODE" == true ]; then
+      echo "Could not remove $1 because it is not a symlink."
+    fi
+  fi
+}
+
+remove_dotfiles_symlink ~/.bash_profile
+remove_dotfiles_symlink ~/.inputrc
+remove_dotfiles_symlink ~/.gitignore_global
+remove_dotfiles_symlink ~/.vim
+remove_dotfiles_symlink ~/.vimrc
+remove_dotfiles_symlink ~/.gvimrc
