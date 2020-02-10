@@ -41,6 +41,7 @@ filetype plugin indent on
 " CONFIG
 " =============================================================================
 syntax on                         " enable syntax highlighting
+set backspace=indent,eol,start    " make backspace act normal
 set autoindent                    " set auto indent
 set ts=2                          " set indent to 2 spaces
 set shiftwidth=2
