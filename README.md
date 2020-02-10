@@ -5,7 +5,7 @@ These are my dotfiles.
 ## What's included
 
 * My custom configuration of various settings in macOS
-* My custom bash configuration.
+* My custom zsh configuration.
 * The latest version of vim, set to the default `EDITOR`, with my custom configuration, bundles, etc.
 * The latest version of git with my `.gitignore_global` set.
 
@@ -18,7 +18,10 @@ These are my dotfiles.
 ### Install options
 
 * Use the `--skip-macos` flag to skip the macos/init.sh script
+* Use the `--skip-git` flag to skip installing git configuration
 * Use the `--skip-homebrew` flag to skip installing homebrew & dependencies
+* Use the `--skip-vim` flag to skip installing vim & configuration
+* Use the `--skip-zsh` flag to skip installing oh-my-zsh & configuration
 
 ## Uninstallation
 

@@ -7,6 +7,12 @@ while :; do
     ;;
     --skip-homebrew) SKIP_HOMEBREW=true
     ;;
+    --skip-zsh) SKIP_ZSH=true
+    ;;
+    --skip-git) SKIP_GIT=true
+    ;;
+    --skip-vim) SKIP_VIM=true
+    ;;
     *) break
   esac
   shift
@@ -23,13 +29,6 @@ echo_success () {
 # cd into current directory
 cd $(dirname "$0")/..
 
-# set macOS config
-if [ "$SKIP_MACOS" == true ]; then
-  echo_warning "Skipping macOS config"
-else
-  yes | source "$(pwd)/macos/init.sh"
-fi
-
 # install homebrew & dependencies
 if [ "$SKIP_HOMEBREW" == true ]; then
   echo_warning "Skipping homebrew install & dependencies"
@@ -44,24 +43,42 @@ else
   brew bundle
 fi
 
-# bash
-echo "Congfiguring bash profile..."
-ln -nfs "$(pwd)/bash/profile.sh" ~/.bash_profile
-ln -nfs "$(pwd)/bash/inputrc.sh" ~/.inputrc
+# zsh
+if [ "$SKIP_ZSH" == true ]; then
+  echo_warning "Skipping ZSH configuration"
+else
+  echo "Installing oh-my-zsh..."
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  echo "Configuring zsh..."
+  ZSH_CONFIG_PATH=$HOME/.zsh_config
+  ZSH_CONFIG_LINE="source $ZSH_CONFIG_PATH"
+  ZSH_RC=$HOME/.zshrc
+  ln -nfs "$(pwd)/zsh/config" $ZSH_CONFIG_PATH
+  grep -qxF "$ZSH_CONFIG_LINE" "$ZSH_RC" || echo "$ZSH_CONFIG_LINE" >> "$ZSH_RC"
+fi
 
 # git
-echo "Configuring git..."
-ln -nfs "$(pwd)/git/gitignore_global" ~/.gitignore_global
-git config --global core.excludesfile ~/.gitignore_global
+if [ "$SKIP_GIT" == true ]; then
+  echo_warning "Skipping git configuration"
+else
+  echo "Configuring git..."
+  ln -nfs "$(pwd)/git/gitignore_global" ~/.gitignore_global
+  git config --global core.excludesfile ~/.gitignore_global
+fi
 
 # vim
-echo "Setting up vim..."
-git submodule init
-git submodule update
-ln -nfs "$(pwd)/vim/.vim" ~/.vim
-ln -nfs "$(pwd)/vim/vimrc" ~/.vimrc
-ln -nfs "$(pwd)/vim/gvimrc" ~/.gvimrc
-vim +PluginInstall +qall
+if [ "$SKIP_VIM" == true ]; then
+  echo_warning "Skipping vim configuration"
+else
+  echo "Setting up vim..."
+  git submodule init
+  git submodule update
+  ln -nfs "$(pwd)/vim/.vim" ~/.vim
+  ln -nfs "$(pwd)/vim/vimrc" ~/.vimrc
+  ln -nfs "$(pwd)/vim/gvimrc" ~/.gvimrc
+  vim +PluginInstall +qall
+fi
 
 echo_success "✓ Dotfiles install complete!"
 echo "You may now set up your git config now if you haven’t already."

@@ -5,10 +5,20 @@ while :; do
   case $1 in
     -v) VERBOSE_MODE=true
     ;;
+    -v) SKIP_GIT=true
+    ;;
+    -v) SKIP_VIM=true
+    ;;
+    -v) SKIP_ZSH=true
+    ;;
     *) break
   esac
   shift
 done
+
+echo_warning () {
+  echo "$(tput setaf 3)$1$(tput sgr 0)"
+}
 
 remove_dotfiles_symlink () {
   # check if the file exists
@@ -29,9 +39,23 @@ remove_dotfiles_symlink () {
   fi
 }
 
-remove_dotfiles_symlink ~/.bash_profile
-remove_dotfiles_symlink ~/.inputrc
-remove_dotfiles_symlink ~/.gitignore_global
-remove_dotfiles_symlink ~/.vim
-remove_dotfiles_symlink ~/.vimrc
-remove_dotfiles_symlink ~/.gvimrc
+if [ "$SKIP_ZSH" == true ]; then
+  echo_warning "Skipping zsh..."
+else
+  remove_dotfiles_symlink ~/.zsh_config
+  uninstall_oh_my_zsh
+fi
+
+if [ "$SKIP_GIT" == true ]; then
+  echo_warning "Skipping git..."
+else
+  remove_dotfiles_symlink ~/.gitignore_global
+fi
+
+if [ "$SKIP_VIM" == true ]; then
+  echo_warning "Skipping vim..."
+else
+  remove_dotfiles_symlink ~/.vim
+  remove_dotfiles_symlink ~/.vimrc
+  remove_dotfiles_symlink ~/.gvimrc
+fi

@@ -1,0 +1,13 @@
+# set oh-my-zsh plugins
+plugins=(brew git npm nvm vi-mode)
+
+# Set the editor to vim. See .vimrc for vim config
+export EDITOR=vim
+export VISUAL=vim
+
+# Update path for homebrew
+export PATH="/usr/local/sbin:$PATH"
+
+# Load hidden, local config if it exists
+[[ -f $HOME/.local_conf ]] && source $HOME/.local_conf
+
