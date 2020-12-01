@@ -63,8 +63,13 @@ if [ "$SKIP_GIT" == true ]; then
   echo_warning "Skipping git configuration"
 else
   echo "Configuring git..."
+  
+  # Global gitignore
   ln -nfs "$(pwd)/git/gitignore_global" ~/.gitignore_global
   git config --global core.excludesfile ~/.gitignore_global
+  
+  # Prevent vim from opening when running `git branch`
+  git config --global pager.branch false
 fi
 
 # vim
