@@ -26,7 +26,7 @@ These are my dotfiles.
 ## Uninstallation
 
 1. Run `~/.dotfiles/script/uninstall`.
-  * Note that this will not uninstall `brew`. Please [uninstall it manually][homebrew-uninstall].
+    * Note that this will not uninstall `brew`. Please [uninstall it manually][homebrew-uninstall].
 2. Remove the `~/.dotfiles` folder.
 
 [homebrew-uninstall]: https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/FAQ.md#how-do-i-uninstall-homebrew
