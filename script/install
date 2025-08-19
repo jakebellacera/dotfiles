@@ -36,7 +36,11 @@ else
   echo "Checking to see if we need to install homebrew..."
   if [ ! -x /usr/local/bin/brew ]; then
     echo "Installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "Setting up homebrew"
+    echo >> /Users/jakebellacera/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/jakebellacera/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 
   echo "Installing homebrew dependencies..."
