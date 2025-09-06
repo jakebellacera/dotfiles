@@ -89,5 +89,12 @@ else
   vim +PluginInstall +qall
 fi
 
+if [ "$SKIP_MACOS" == true ]; then
+  echo_warning "Skipping macOS configuration"
+else
+  echo "Setting up macOS..."
+  sh "$(pwd)/macos/init.sh"
+fi
+
 echo_success "✓ Dotfiles install complete!"
 echo "You may now set up your git config now if you haven’t already."
